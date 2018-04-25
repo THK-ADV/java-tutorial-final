@@ -14,6 +14,7 @@ public class Person {
         this.adresse = adresse;
     }
 
+    // ----------- Setter und Getter ----------
     public String getVorname() {
         return vorname;
     }
