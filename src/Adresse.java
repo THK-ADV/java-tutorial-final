@@ -1,11 +1,14 @@
+import com.sun.javafx.binding.StringFormatter;
+
 public class Adresse {
-    private String straße, ort;
+    private String straße, ort, hausnummer;
     private long postleihzahl;
 
-    public Adresse(String straße, String ort, long postleihzahl) {
+    public Adresse(String straße, String hausnummer, String ort, long postleihzahl) {
         this.straße = straße;
         this.ort = ort;
         this.postleihzahl = postleihzahl;
+        this.hausnummer = hausnummer;
     }
 
     public String getStraße() {
@@ -30,5 +33,17 @@ public class Adresse {
 
     public void setPostleihzahl(long postleihzahl) {
         this.postleihzahl = postleihzahl;
+    }
+
+    public String getHausnummer() {
+        return hausnummer;
+    }
+
+    public void setHausnummer(String hausnummer) {
+        this.hausnummer = hausnummer;
+    }
+
+    public String getDruckAdresse(){
+        return straße + " " + hausnummer + ", " + postleihzahl + " " + ort;
     }
 }
