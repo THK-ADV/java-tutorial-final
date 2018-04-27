@@ -39,4 +39,16 @@ public class Gebäude {
     public void setRäume(ArrayList<Raum> räume) {
         this.räume = räume;
     }
+
+    public String[] getAlleRaumNummern() {
+        String[] raumNummern = new String[räume.size()];
+        for(int index = 0; index < raumNummern.length; index++) {
+            raumNummern[index] = räume.get(index).getNummer();
+        }
+        return raumNummern;
+    }
+
+    public boolean beinhaltet(Raum raum) {
+        return räume.contains(raum);
+    }
 }
