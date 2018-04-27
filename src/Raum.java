@@ -37,4 +37,12 @@ public class Raum {
     public void setInventar(ArrayList<InventarGegenstand> inventar) {
         this.inventar = inventar;
     }
+
+    public boolean beinhaltet(InventarGegenstand inventarGegenstand) {
+        return this.inventar.contains(inventarGegenstand);
+    }
+
+    public String getVolleRaumBezeichnung() {
+        return nummer + " - " + name;
+    }
 }
