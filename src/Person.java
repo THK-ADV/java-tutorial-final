@@ -1,5 +1,3 @@
-import java.sql.Timestamp;
-import java.time.Duration;
 import java.time.LocalDate;
 import java.time.Period;
 
@@ -14,8 +12,8 @@ public class Person {
         this.geburtsDatum = geburtsDatum;
     }
 
-    public Person(String vorname, String nachname, LocalDate geburtsDatum, Adresse adresse) {
-        this(vorname, nachname, geburtsDatum);
+    public Person(String vorname, String nachname, LocalDate gebDatum, Adresse adresse) {
+        this(vorname, nachname, gebDatum);
         this.adresse = adresse;
     }
 
@@ -54,7 +52,6 @@ public class Person {
     public void setAdresse(Adresse adresse) {
         this.adresse = adresse;
     }
-
     public int getAlter() {
         return Period.between(geburtsDatum, LocalDate.now()).getYears();
     }
