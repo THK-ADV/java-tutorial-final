@@ -14,7 +14,10 @@ public class Person {
         this.adresse = adresse;
     }
 
-    // ----------- Setter und Getter ----------
+    public String getVollenNamen() {
+        return vorname + " " + nachname;
+    }
+
     public String getVorname() {
         return vorname;
     }
