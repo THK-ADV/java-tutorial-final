@@ -1,16 +1,21 @@
+import java.time.LocalDate;
+import java.time.Period;
+import java.util.Calendar;
+import java.util.Date;
+
 public class Person {
     private String vorname, nachname;
-    private int alter;
+    private LocalDate gebDatum;
     private Adresse adresse;
 
-    public Person(String vorname, String nachname, int alter) {
+    public Person(String vorname, String nachname, LocalDate gebDatum) {
         this.vorname = vorname;
         this.nachname = nachname;
-        this.alter = alter;
+        this.gebDatum = gebDatum;
     }
 
-    public Person(String vorname, String nachname, int alter, Adresse adresse) {
-        this(vorname, nachname, alter);
+    public Person(String vorname, String nachname, LocalDate gebDatum, Adresse adresse) {
+        this(vorname, nachname, gebDatum);
         this.adresse = adresse;
     }
 
@@ -31,13 +36,10 @@ public class Person {
         this.nachname = nachname;
     }
 
-    public int getAlter() {
-        return alter;
-    }
+    public LocalDate getGebDatum() { return gebDatum; }
 
-    public void setAlter(int alter) {
-        this.alter = alter;
-    }
+    public void setGebDatum(LocalDate gebDatum) { this.gebDatum = gebDatum; }
+
 
     public Adresse getAdresse() {
         return adresse;
@@ -46,4 +48,12 @@ public class Person {
     public void setAdresse(Adresse adresse) {
         this.adresse = adresse;
     }
+
+    // Eigene Methoden
+    public String getVollenNamen(){
+        return vorname + " " + nachname;
+    }
+
+
+
 }

@@ -1,16 +1,16 @@
 public class Adresse {
     private String straße, ort;
-    private long postleihzahl;
+    private int hausnr;
+    private long postleitzahl;
 
-    public Adresse(String straße, String ort, long postleihzahl) {
+    public Adresse(String straße, String ort, int hausnr, long postleitzahl) {
         this.straße = straße;
         this.ort = ort;
-        this.postleihzahl = postleihzahl;
+        this.hausnr = hausnr;
+        this.postleitzahl = postleitzahl;
     }
 
-    public String getStraße() {
-        return straße;
-    }
+    public String getStraße() { return straße; }
 
     public void setStraße(String straße) {
         this.straße = straße;
@@ -24,11 +24,15 @@ public class Adresse {
         this.ort = ort;
     }
 
-    public long getPostleihzahl() {
-        return postleihzahl;
+    public int getHausnr() { return hausnr; }
+
+    public void setHausnr(int hausnr) { this.hausnr = hausnr; }
+
+    public long getPostleitzahl() {
+        return postleitzahl;
     }
 
-    public void setPostleihzahl(long postleihzahl) {
-        this.postleihzahl = postleihzahl;
+    public void setPostleitzahl(long postleitzahl) {
+        this.postleitzahl = postleitzahl;
     }
 }
