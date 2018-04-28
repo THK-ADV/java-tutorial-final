@@ -1,24 +1,31 @@
-import java.time.LocalDate;
-import java.time.Period;
-
 public class Person {
     private String vorname, nachname;
-    private LocalDate geburtsDatum;
+    private int alter;
+    private Double groesse;
     private Adresse adresse;
 
-    public Person(String vorname, String nachname, LocalDate geburtsDatum) {
+    public Person(String vorname, String nachname, int alter, Double groesse, Adresse adresse) {
         this.vorname = vorname;
         this.nachname = nachname;
-        this.geburtsDatum = geburtsDatum;
+        this.alter = alter;
+        this.groesse = groesse;
+        this.adresse = adresse;
     }
 
-    public Person(String vorname, String nachname, LocalDate gebDatum, Adresse adresse) {
-        this(vorname, nachname, gebDatum);
-        this.adresse = adresse;
+    public boolean istAelterAls(Person p) {
+        return alter > p.alter;
     }
 
     public String getVollenNamen() {
         return vorname + " " + nachname;
+    }
+
+    public Double groessenunterschiedZu(Person p) {
+        return Math.abs(groesse - p.groesse);
+    }
+
+    public boolean wohnenImGleichenOrt(Person p) {
+        return adresse.istGleicherOrt(p.adresse);
     }
 
     public String getVorname() {
@@ -37,12 +44,20 @@ public class Person {
         this.nachname = nachname;
     }
 
-    public LocalDate getGeburtsDatum() {
-        return geburtsDatum;
+    public int getAlter() {
+        return alter;
     }
 
-    public void setGeburtsDatum(LocalDate geburtsDatum) {
-        this.geburtsDatum = geburtsDatum;
+    public void setAlter(int alter) {
+        this.alter = alter;
+    }
+
+    public Double getGroesse() {
+        return groesse;
+    }
+
+    public void setGroesse(Double groesse) {
+        this.groesse = groesse;
     }
 
     public Adresse getAdresse() {
@@ -51,8 +66,5 @@ public class Person {
 
     public void setAdresse(Adresse adresse) {
         this.adresse = adresse;
-    }
-    public int getAlter() {
-        return Period.between(geburtsDatum, LocalDate.now()).getYears();
     }
 }

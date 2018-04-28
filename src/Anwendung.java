@@ -3,22 +3,17 @@ import java.time.LocalDate;
 public class Anwendung {
     public static void main(String[] args) {
 
-        Adresse paulsAdresse = new Adresse("Ziegelstraße", "60", "Neuhaus", 91284);
-        Person paul = new Person("Paul", "Panzer", LocalDate.of(1998, 12, 3), paulsAdresse);
+        Adresse a1 = new Adresse("Martin-Straße", 5, "51645", "Gummersbach");
+        Adresse a2 = new Adresse("Taubenweg", 2, "51643", "Gummersbach");
 
-        System.out.printf("Pauls Adresse: %s%n", paul.getAdresse().getDruckAdresse());
+        Person paul = new Person("Paul", "Peters", 26, 1.80, a2);
+        Person rainer = new Person("Rainer", "Zufall", 21, 1.65, a1);
+        Person regina = new Person("Regina", "Rosig", 18, 1.74, a1);
 
-        Raum raum1 = new Raum("1.325", "Innovationsraum");
-        InventarGegenstand beamer = new InventarGegenstand("Beamer");
-
-        raum1.getInventar().add(beamer);
-        System.out.println(raum1.getVolleRaumBezeichnung());
-
-        if(raum1.beinhaltet(beamer)) {
-            System.out.println("Der Innovationsraum beinhaltet einen Beamer!");
-        } else {
-            System.out.println("Der Innovationsraum beinhaltet keinen Beamer!");
-        }
+        System.out.println(rainer.istAelterAls(paul));
+        System.out.println(rainer.istAelterAls(regina));
+        System.out.println(paul.wohnenImGleichenOrt(regina));
+        System.out.println(rainer.groessenunterschiedZu(paul));
 
     }
 }

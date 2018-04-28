@@ -1,18 +1,28 @@
 public class Adresse {
-    private String straße, ort, hausnummer;
-    private long postleitzahl;
+    private String strasse, ort, postleitzahl;
+    private int hausnummer;
 
-    public Adresse(String straße, String hausnummer, String ort, long postleitzahl) {
-        this.straße = straße;
+    public Adresse(String strasse, int hausnummer, String postleitzahl, String ort) {
+        this.strasse = strasse;
         this.ort = ort;
         this.postleitzahl = postleitzahl;
         this.hausnummer = hausnummer;
     }
 
-    public String getStraße() { return straße; }
+    public boolean istGleicherOrt(Adresse adresse) {
+        return ort.equals(adresse.ort) && postleitzahl.equals(adresse.postleitzahl);
+    }
 
-    public void setStraße(String straße) {
-        this.straße = straße;
+    public boolean istGleichesHaus(Adresse adresse) {
+        return istGleicherOrt(adresse) && strasse.equals(adresse.strasse) && hausnummer == adresse.hausnummer;
+    }
+
+    public String getStrasse() {
+        return strasse;
+    }
+
+    public void setStrasse(String strasse) {
+        this.strasse = strasse;
     }
 
     public String getOrt() {
@@ -23,23 +33,19 @@ public class Adresse {
         this.ort = ort;
     }
 
-    public long getPostleitzahl() {
+    public String getPostleitzahl() {
         return postleitzahl;
     }
 
-    public void setPostleitzahl(long postleitzahl) {
+    public void setPostleitzahl(String postleitzahl) {
         this.postleitzahl = postleitzahl;
     }
 
-    public String getHausnummer() {
+    public int getHausnummer() {
         return hausnummer;
     }
 
-    public void setHausnummer(String hausnummer) {
+    public void setHausnummer(int hausnummer) {
         this.hausnummer = hausnummer;
-    }
-
-    public String getDruckAdresse(){
-        return straße + " " + hausnummer + ", " + postleitzahl + " " + ort;
     }
 }
