@@ -12,6 +12,10 @@ public class Person {
         this.adresse = adresse;
     }
 
+    public Person(String vorname, String nachname, Double groesse, Adresse adresse, int geburtsJahr) {
+        this(vorname, nachname, 2018 - geburtsJahr, groesse, adresse);
+    }
+
     public boolean istAelterAls(Person p) {
         return alter > p.alter;
     }
@@ -22,10 +26,6 @@ public class Person {
 
     public Double groessenunterschiedZu(Person p) {
         return Math.abs(groesse - p.groesse);
-    }
-
-    public boolean wohnenImGleichenOrt(Person p) {
-        return adresse.istGleicherOrt(p.adresse);
     }
 
     public String getVorname() {

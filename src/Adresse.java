@@ -9,12 +9,12 @@ public class Adresse {
         this.hausnummer = hausnummer;
     }
 
-    public boolean istGleicherOrt(Adresse adresse) {
-        return ort.equals(adresse.ort) && postleitzahl.equals(adresse.postleitzahl);
+    public static boolean istGleicherOrt(Adresse adresse1, Adresse adresse2) {
+        return adresse1.ort.equals(adresse2.ort) && adresse1.postleitzahl.equals(adresse2.postleitzahl);
     }
 
-    public boolean istGleichesHaus(Adresse adresse) {
-        return istGleicherOrt(adresse) && strasse.equals(adresse.strasse) && hausnummer == adresse.hausnummer;
+    public String getBriefkopf() {
+        return strasse + " " + hausnummer + ", " + postleitzahl + " " + ort;
     }
 
     public String getStrasse() {

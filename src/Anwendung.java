@@ -12,7 +12,6 @@ public class Anwendung {
 
         System.out.println(rainer.istAelterAls(paul));
         System.out.println(rainer.istAelterAls(regina));
-        System.out.println(paul.wohnenImGleichenOrt(regina));
         System.out.println(rainer.groessenunterschiedZu(paul));
 
     }
